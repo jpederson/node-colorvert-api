@@ -1,13 +1,12 @@
 
 
 // require all conversion functions
-var cvert = require( "../colorvert" );
+var cvert = require( "colorvert" );
 
 
 // cmyk endpoint handler
 module.exports = function( req, res ){
 		
-
 	// parse the URL for a format request
 	var url_parts = req.url.substring( 1 ).split( "/" );
 		format = url_parts[0],

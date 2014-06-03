@@ -1,7 +1,7 @@
 
 
 // require all conversion functions
-var cvert = require( "../colorvert" );
+var cvert = require( "colorvert" );
 
 
 // cmyk endpoint handler

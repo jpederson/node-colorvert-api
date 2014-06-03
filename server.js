@@ -16,6 +16,7 @@ app.get( '/hsl/*', require( "./api/hsl" ) );
 app.get( '/hsv/*', require( "./api/hsv" ) );
 app.get( '/lab/*', require( "./api/lab" ) );
 app.get( '/rgb/*', require( "./api/rgb" ) );
+app.get( '/xyz/*', require( "./api/xyz" ) );
 
 
 // catch-all invalid endpoint response
