@@ -1,0 +1,180 @@
+@import url("//fonts.googleapis.com/css?family=Open+Sans|Bree+Serif|Inconsolata");
+
+
+@import "reset";
+
+@import "mixins";
+
+@import "grid";
+
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 17px;
+	line-height: 27px;
+	background-color: #00acec;
+	color: white;
+	transition: background-color 1s ease-in-out, color 1s ease-in-out;
+
+	padding: 20px;
+
+	@include respond-to( 500px ) { padding: 20px 30px; }
+	@include respond-to( 768px ) { padding: 30px 40px; }
+	@include respond-to( 1024px ) { padding: 30px 50px; }
+}
+
+p, ul, ol {
+	padding: 10px 0;
+}
+
+h1 {
+	font-family: "Bree Serif", serif;
+	font-size: 3em;
+	line-height: 1.2em;
+
+	@include respond-to( 768px ) { font-size: 4em; }
+	@include respond-to( 1150px ) { font-size: 5em; }
+}
+
+h3 {
+	font-family: "Bree Serif", serif;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	padding: 15px 0 3px;
+}
+
+	
+input[type=text], select {
+	max-width: 80px;
+	text-align: center;
+	padding: 7px 11px;
+	border: 0;
+	box-shadow: 1px 1px 12px rgba( 0, 0, 0, .4 );
+	font-family: "Bree Serif", serif;
+	font-size: 17px;
+	line-height: 17px;
+	border-radius: none;
+	opacity: .8;
+
+	&:focus {
+		opacity: 1;
+	}
+}
+
+	
+button {
+	text-align: center;
+	padding: 14px 17px;
+	background: #fff;
+	border: 0;
+	box-shadow: 1px 1px 12px rgba( 0, 0, 0, .3 );
+	font-family: "Bree Serif", serif;
+	font-size: 22px;
+	line-height: 22px;
+	border-radius: none;
+	cursor: pointer;
+	opacity: .9;
+
+	&:hover {
+		opacity: 1;
+		box-shadow: 1px 1px 20px rgba( 0, 0, 0, .5 );
+	}
+}
+
+
+header {
+	text-align: center;
+	margin-bottom: 10px;
+
+	p {
+		opacity: .6;
+		font-size: .9em;
+		line-height: 1.3em;
+	}
+}
+
+
+.wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+
+.tool {
+	text-align: center;
+	
+	.space {
+		margin-bottom: 20px;
+	}
+
+	label {
+		display: block;
+		padding: 20px 0 0;
+		font-family: "Bree Serif", serif;
+		font-size: 1.2em;
+		line-height: 1.2em;
+
+		span {
+			width: 40px;
+			display: inline-block;
+			text-align: center;
+		}
+
+		input[type=text] {
+			margin-right: 40px;
+		}
+	}
+
+	fieldset {
+		overflow: hidden;
+		height: 0;
+		opacity: 0;
+		transition: opacity 500ms ease-in-out, height 500ms ease-in-out;
+
+		&.visible {
+			height: 220px;
+			opacity: 1;
+
+			&.cmyk { height: 280px; }
+			&.hex { height: 100px; }
+		}
+	}
+
+	@include respond-to( 768px ) {
+		float: left;
+		width: 35%;
+		padding: 0 30px 0 0;
+	}
+}
+
+
+.response {
+	margin-top: 30px;
+
+	pre {
+		background: rgba( white, .7 );
+		color: black;
+		text-align: left;
+		padding: 20px;
+		font-family: "Inconsolata", monospace;
+		font-size: 15px;
+		line-height: 19px;
+
+		@include respond-to( 768px ) {
+			max-height: 500px;
+			overflow: auto;
+		}
+	}
+
+	@include respond-to( 768px ) {
+		float: left;
+		width: 60%;
+		margin-top: 10px;
+	}
+}
+
+
+.quiet {
+	opacity: .7;
+	font-size: .9em;
+}

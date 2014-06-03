@@ -3,8 +3,86 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Colorvert</title>
+
+	<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-	Currently under construction
+	
+	<header>
+		<h1>colorvert</h1>
+		<p>A universal color conversion API for transforms between CMYK, Lab, XYZ, RGB, HSL, HSV, and hex.</p>
+	</header>
+
+	<main class="wrap group">
+
+		<section class="tool">
+			
+			<div class="space">
+				<h3>convert from</h3>
+				<select id="space">
+					<option value="cmyk" selected>CMYK</option>
+					<option value="hex">Hex</option>
+					<option value="hsl">HSL</option>
+					<option value="hsv">HSV</option>
+					<option value="lab">Lab</option>
+					<option value="rgb">RGB</option>
+					<option value="xyz">XYZ</option>
+				</select>
+			</div>
+			
+			<fieldset class="cmyk visible">
+				<label><span>C</span> <input type="text" id="cmyk-c" value="100"></label>
+				<label><span>M</span> <input type="text" id="cmyk-m" value="0"></label>
+				<label><span>Y</span> <input type="text" id="cmyk-y" value="0"></label>
+				<label><span>K</span> <input type="text" id="cmyk-k" value="0"></label>
+			</fieldset>
+			
+			<fieldset class="hex">
+				<label><span>Hex</span> <input type="text" id="hex" value="00acec"></label>
+			</fieldset>
+			
+			<fieldset class="hsl">
+				<label><span>H</span> <input type="text" id="hsl-h" value="196"></label>
+				<label><span>S</span> <input type="text" id="hsl-s" value="100"></label>
+				<label><span>L</span> <input type="text" id="hsl-l" value="46"></label>
+			</fieldset>
+			
+			<fieldset class="hsv">
+				<label><span>H</span> <input type="text" id="hsv-h" value="196"></label>
+				<label><span>S</span> <input type="text" id="hsv-s" value="100"></label>
+				<label><span>V</span> <input type="text" id="hsv-v" value="92"></label>
+			</fieldset>
+			
+			<fieldset class="lab">
+				<label><span>L</span> <input type="text" id="lab-l" value="100"></label>
+				<label><span>a</span> <input type="text" id="lab-a" value="0"></label>
+				<label><span>b</span> <input type="text" id="lab-b" value="0"></label>
+			</fieldset>
+			
+			<fieldset class="rgb">
+				<label><span>R</span> <input type="text" id="rgb-r" value="0"></label>
+				<label><span>G</span> <input type="text" id="rgb-g" value="172"></label>
+				<label><span>B</span> <input type="text" id="rgb-b" value="236"></label>
+			</fieldset>
+			
+			<fieldset class="xyz">
+				<label><span>X</span> <input type="text" id="xyz-x" value="56"></label>
+				<label><span>Y</span> <input type="text" id="xyz-y" value="82"></label>
+				<label><span>Z</span> <input type="text" id="xyz-z" value="211"></label>
+			</fieldset>
+
+			<button id="convert">Convert &raquo;</button>
+
+		</section>
+
+		<section class="response">
+			<h3>How to convert colors.</h3>
+			<p>Enter a color using the form, and then click the convert button to see the results displayed here.</p>
+		</section>
+
+	</main>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<Script src="js/main.js"></script>
 </body>
 </html>

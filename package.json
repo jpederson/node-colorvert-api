@@ -1,6 +1,6 @@
 {
   "name": "colorvert-api",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Color conversion JSON API",
   "main": "server.js",
   "repository": {
@@ -23,7 +23,7 @@
   "homepage": "https://github.com/jpederson/node-colorvert-api",
   "dependencies": {
     "express": "~4.4.0",
-    "colorvert": "~0.0.7"
+    "colorvert": "~0.1.1"
   },
   "devDependencies": {
     "grunt": "latest",

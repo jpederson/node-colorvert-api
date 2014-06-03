@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'example.css': 'example.scss'
+                    'public/css/main.css': 'public/css/src/main.scss'
                 }
             }
         },
@@ -43,7 +43,6 @@ module.exports = function(grunt) {
             js: {
                 files: {
                     'public/js/main.js': [
-                        'public/js/src/rangeslider.js',
                         'public/js/src/main.js'
                     ]
                 }
