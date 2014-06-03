@@ -1,0 +1,36 @@
+{
+  "name": "colorvert-api",
+  "version": "0.0.1",
+  "description": "Color conversion JSON API",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jpederson/node-colorvert-api.git"
+  },
+  "keywords": [
+    "color",
+    "conversion",
+    "JSON",
+    "API",
+    "node",
+    "LittleCMS"
+  ],
+  "author": "James Pederson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpederson/node-colorvert-api/issues"
+  },
+  "homepage": "https://github.com/jpederson/node-colorvert-api",
+  "dependencies": {
+    "express": "~4.4.0",
+    "colorvert": "~0.0.7"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "matchdep": "*"
+  }
+}
