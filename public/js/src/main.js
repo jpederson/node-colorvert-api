@@ -2,21 +2,11 @@
 
 $(function(){
 	
-	function get_part_value( part ) {
+	var get_part_value = function( part ) {
 		return $( "#"+part ).val();
-	}
+	},
 
-	$("#space").change(function(){
-
-		// hide visible fieldsets
-		$("fieldset.visible").removeClass( "visible" );
-
-		// show the one they chose
-		$("fieldset").filter("."+$(this).val()).addClass( "visible" );
-
-	});
-
-	$("#convert").click(function(){
+	get_colors = function(){
 
 		// get the selected color space
 		var space = $("#space").val(),
@@ -68,12 +58,33 @@ $(function(){
 		}
 
 		$.getJSON( endpoint, function( response ){
-			
-			$(".response").html( "<pre>" + JSON.stringify( response, null, 3 ) + "</pre>" );
-			$("body").css( "background-color", response.hex ).css( "color", response.hex_readable );
 
+			// set it into the response div
+			$(".response").html( "<pre>" + JSON.stringify( response, null, 3 ) + "</pre>" );
+
+			// set colors on body text and background.
+			$("body").css( "background-color", response.hex ).css( "color", response.hex_readable );
+		
 		});
 
+	};
+
+	$("#space").change(function(){
+
+		// hide visible fieldsets
+		$("fieldset.visible").removeClass( "visible" );
+
+		// show the one they chose
+		$("fieldset").filter("."+$(this).val()).addClass( "visible" );
+
+	});
+
+	$("#convert").click( get_colors );
+
+	$("input[type=text]").keyup( function( e ){
+		if ( e.keyCode === 13 ) {
+			get_colors();
+		}
 	});
 
 });

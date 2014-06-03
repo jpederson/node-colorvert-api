@@ -159,6 +159,7 @@ header {
 		font-family: "Inconsolata", monospace;
 		font-size: 15px;
 		line-height: 19px;
+		margin-top: 10px;
 
 		@include respond-to( 768px ) {
 			max-height: 500px;
@@ -169,7 +170,7 @@ header {
 	@include respond-to( 768px ) {
 		float: left;
 		width: 60%;
-		margin-top: 10px;
+		margin-top: 0;
 	}
 }
 
