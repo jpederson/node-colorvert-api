@@ -27,4 +27,10 @@ Once you've installed that dependency, you're ready to install colorvert-api and
 npm install colorvert-api --save
 ```
 
-More documentation on running the server to come as it's finished being developed.
+More documentation on running the server to come as it's finished being developed. 
+
+*****
+
+### Warning! :)
+
+This and the colorvert module are still under development. They currently function for perfect input, but as soon as an empty/invalid value is passed, things fall apart, so I have to do some input testing/error reporting and write thorough tests before anyone should use it. You've been warned :) Otherwise, feel free to run it locally if you need to batch convert colors and you know the input will be valid!
