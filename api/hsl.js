@@ -15,13 +15,21 @@ module.exports = function( req, res ){
 		l = url_parts[3];
 	
 
-	// convert to lab using transicc
-	cvert.hsl_to_all( h, s, l, function( response ){
+	if ( h && s && l ) {
+
+		// convert to lab using transicc
+		cvert.hsl_to_all( h, s, l, function( response ){
+
+			// send the response to the browser
+			res.send( JSON.stringify( response, null, 4 ) );
+
+		});
+
+	} else {
 
 		// send the response to the browser
-		res.send( JSON.stringify( response, null, 4 ) );
+		res.send( "Invalid input" );
 
-	});
+	}
 
 };
-

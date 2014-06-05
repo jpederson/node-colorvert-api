@@ -15,14 +15,22 @@ module.exports = function( req, res ){
 		v = parseFloat( url_parts[3] );
 	
 
-	// convert to Lab using transicc
-	cvert.hsv_to_all( h, s, v, function( response ){
+	if ( h && s && v ) {
+
+		// convert to Lab using transicc
+		cvert.hsv_to_all( h, s, v, function( response ){
+
+			// send the response to the browser
+			res.send( response );
+
+		});
+
+	} else {
 
 		// send the response to the browser
-		res.send( response );
+		res.send( "Invalid input" );
 
-	});
-
+	}
 
 };
 

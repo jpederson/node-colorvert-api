@@ -15,13 +15,22 @@ module.exports = function( req, res ){
 		b = parseFloat( url_parts[3] );
 	
 
-	// convert to rgb using transicc
-	cvert.lab_to_all( l, a, b, function( response ){
+	if( l && a && b ) {
+
+		// convert to rgb using transicc
+		cvert.lab_to_all( l, a, b, function( response ){
+
+			// send the response to the browser
+			res.send( JSON.stringify( response, null, 4 ) );
+
+		});
+
+	} else {
 
 		// send the response to the browser
-		res.send( JSON.stringify( response, null, 4 ) );
+		res.send( "Invalid input" );
 
-	});
+	}
 
 };
 

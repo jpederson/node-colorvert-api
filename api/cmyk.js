@@ -16,13 +16,27 @@ module.exports = function( req, res ){
 		k = url_parts[4];
 	
 
-	// convert to lab using transicc
-	cvert.cmyk_to_all( c, m, y, k, function( response ){
+	if( c && m && y && k ) {
+
+		// convert to lab using transicc
+		cvert.cmyk_to_all( c, m, y, k, function( response ){
+
+			// log the activity
+			console.log( "Successful Conversion: CMYK( "+c+", "+m+", "+y+", "+k+" )" );
+
+			// send the response to the browser
+			res.send( JSON.stringify( response, null, 4 ) );
+
+		});
+
+	} else {
+
+		console.log( "Invalid Input: CMYK( "+c+", "+m+", "+y+", "+k+" )" );
 
 		// send the response to the browser
-		res.send( JSON.stringify( response, null, 4 ) );
+		res.send( "Invalid input" );
 
-	});
+	}
 
 };
 

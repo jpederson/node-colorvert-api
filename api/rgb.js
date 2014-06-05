@@ -15,13 +15,22 @@ module.exports = function( req, res ){
 		b = url_parts[3];
 	
 
-	// convert to lab using transicc
-	cvert.rgb_to_all( r, g, b, function( response ){
+	if( r && g && b ) {
+
+		// convert to lab using transicc
+		cvert.rgb_to_all( r, g, b, function( response ){
+
+			// send the response to the browser
+			res.send( JSON.stringify( response, null, 4 ) );
+
+		});
+
+	} else {
 
 		// send the response to the browser
-		res.send( JSON.stringify( response, null, 4 ) );
+		res.send( "Invalid input" );
 
-	});
+	}
 
 };
 

@@ -14,14 +14,22 @@ module.exports = function( req, res ){
 		y = url_parts[2],
 		z = url_parts[3];
 	
+	if( x && y && z ) {
 
-	// convert to lab using transicc
-	cvert.xyz_to_all( x, y, z, function( response ){
+		// convert to lab using transicc
+		cvert.xyz_to_all( x, y, z, function( response ){
+
+			// send the response to the browser
+			res.send( JSON.stringify( response, null, 4 ) );
+
+		});
+
+	} else {
 
 		// send the response to the browser
-		res.send( JSON.stringify( response, null, 4 ) );
+		res.send( "Invalid input" );
 
-	});
+	}
 
 };
 
