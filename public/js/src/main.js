@@ -64,6 +64,7 @@ $(function(){
 
 			// set colors on body text and background.
 			$("body").css( "background-color", response.hex ).css( "color", response.hex_readable );
+			$("a").css( "color", response.hex_readable ).css( "border-color", response.hex_readable );
 		
 		});
 
@@ -85,6 +86,10 @@ $(function(){
 		if ( e.keyCode === 13 ) {
 			get_colors();
 		}
+	});
+
+	$(".more-info").click(function(){
+		$(".more:hidden").slideDown( 700 );
 	});
 
 });

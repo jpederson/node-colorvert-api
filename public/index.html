@@ -10,8 +10,15 @@
 	
 	<header>
 		<h1>colorvert</h1>
-		<p>A universal color conversion API for converting between CMYK, Lab, XYZ, RGB, HSL, HSV, and hex.</p>
+		<p>A universal color conversion API for converting between CMYK, Lab, XYZ, RGB, HSL, HSV, and hex. <a href="#" class="more-info">Read more &raquo;</a></p>
 	</header>
+
+	<section class="more wrap">
+		<h3>More about colorvert..</h3>
+		<p>Math-based CMYK conversions just weren't doing it for me, so I built this little guy to interact with color profiles to perform more accurate conversions for me. So here's the shtick - this little API uses a node module called <a href="https://github.com/jpederson/node-colorvert"><strong>colorvert</strong></a> to perform a wide range of conversions between profile and math-based color spaces. Colorvert actually uses another module called <a href="https://github.com/jpederson/node-transicc"><strong>transicc</strong></a> for only the profile-based conversions.
+		<p>For the sake of accuracy and consistency, the colorvert module uses Adobe's ICC profiles for the conversions - so converted colors should match those in Photoshop and Illustrator.</p>
+		<p>This API and colorvert itself are still relatively new, and contributions are welcome. Visit the project pages on Github (at the links above) to find out more about contributing to the tool, or post an issue you've found.</p>
+	</section>
 
 	<main class="wrap group">
 

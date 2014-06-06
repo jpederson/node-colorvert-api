@@ -10,7 +10,7 @@ If you only need conversions between ICC profiles (CMYK, Lab, XYZ, RGB) and don'
 
 ### Installation Requirements
 
-You must first install LittleCMS, an tiny open source Python library for converting colors using ICC profiles. This shell script will get you there.
+You must first install LittleCMS, an tiny open source library written mostly in C for converting colors using ICC profiles. This shell script will get you there.
 
 ```shell
 git clone https://github.com/mm2/Little-CMS.git

@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Open+Sans|Bree+Serif|Inconsolata");
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700|Bree+Serif|Inconsolata");
 
 
 @import "reset";
@@ -23,8 +23,18 @@ body {
 	@include respond-to( 1024px ) { padding: 30px 50px; }
 }
 
+a {
+	color: white;
+	text-decoration: none;
+	border-bottom: 1px dotted white;
+}
+
 p, ul, ol {
 	padding: 10px 0;
+}
+
+strong, th {
+	font-weight: 700;
 }
 
 h1 {
@@ -84,7 +94,6 @@ button {
 
 header {
 	text-align: center;
-	margin-bottom: 10px;
 	
 	@include respond-to( 480px ) { padding: 0 30px; }
 
@@ -98,8 +107,18 @@ header {
 
 
 .wrap {
-	max-width: 1100px;
-	margin: 0 auto;
+	max-width: 900px;
+	margin: 20px auto 30px;
+	
+	@include respond-to( 600px ) {
+		margin: 40px auto;
+	}
+}
+
+
+.more {
+	max-width: 600px;
+	display: none;
 }
 
 
