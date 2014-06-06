@@ -22,7 +22,7 @@ module.exports = function( req, res ){
 		cvert.cmyk_to_all( c, m, y, k, function( response ){
 
 			// log the activity
-			console.log( "Successful Conversion: CMYK( "+c+", "+m+", "+y+", "+k+" )" );
+			console.log( "Successful Conversion: cmyk( "+c+", "+m+", "+y+", "+k+" )" );
 
 			// send the response to the browser
 			res.send( JSON.stringify( response, null, 4 ) );
@@ -31,7 +31,7 @@ module.exports = function( req, res ){
 
 	} else {
 
-		console.log( "Invalid Input: CMYK( "+c+", "+m+", "+y+", "+k+" )" );
+		console.log( "Invalid Input: cmyk( "+c+", "+m+", "+y+", "+k+" )" );
 
 		// send the response to the browser
 		res.send( "Invalid input" );

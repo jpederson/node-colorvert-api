@@ -17,7 +17,7 @@ module.exports = function( req, res ){
 		// convert to rgb using transicc
 		cvert.hex_to_all( hex, function( response ){
 
-			console.log( "Converted CMYK( "+c+", "+m+", "+y+", "+k+" )." );
+			console.log( "Converted Hex: "+hex+"." );
 
 			// send the response to the browser
 			res.send( JSON.stringify( response, null, 4 ) );
