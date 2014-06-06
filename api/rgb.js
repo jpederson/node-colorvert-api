@@ -20,6 +20,9 @@ module.exports = function( req, res ){
 		// convert to lab using transicc
 		cvert.rgb_to_all( r, g, b, function( response ){
 
+			// log the conversion
+			console.log( "Converted rgb( "+r+", "+g+", "+b+" )." );
+
 			// send the response to the browser
 			res.send( JSON.stringify( response, null, 4 ) );
 

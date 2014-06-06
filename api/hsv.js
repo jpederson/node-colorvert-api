@@ -20,6 +20,9 @@ module.exports = function( req, res ){
 		// convert to Lab using transicc
 		cvert.hsv_to_all( h, s, v, function( response ){
 
+			// log the conversion
+			console.log( "Converted hsv( "+h+", "+s+", "+v+" )." );
+
 			// send the response to the browser
 			res.send( response );
 

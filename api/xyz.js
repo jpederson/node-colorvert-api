@@ -19,6 +19,9 @@ module.exports = function( req, res ){
 		// convert to lab using transicc
 		cvert.xyz_to_all( x, y, z, function( response ){
 
+			// log the conversion
+			console.log( "Converted xyz( "+x+", "+y+", "+z+" )." );
+
 			// send the response to the browser
 			res.send( JSON.stringify( response, null, 4 ) );
 
