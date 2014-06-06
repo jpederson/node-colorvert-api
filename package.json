@@ -1,6 +1,6 @@
 {
   "name": "colorvert-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Color conversion JSON API",
   "main": "server.js",
   "repository": {
