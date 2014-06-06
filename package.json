@@ -1,6 +1,6 @@
 {
   "name": "colorvert-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Color conversion JSON API",
   "main": "server.js",
   "repository": {
@@ -31,6 +31,7 @@
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
+    "grunt-bump": "*",
     "matchdep": "*"
   }
 }
