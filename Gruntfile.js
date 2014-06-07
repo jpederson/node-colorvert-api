@@ -54,6 +54,13 @@ module.exports = function(grunt) {
                 script: 'server.js'
             }
         },
+        
+        // bump package.json for publishing
+        bump: {
+            options: {
+                pushTo: 'origin'
+            }
+        },
 
         // concurrent blocking task management
         concurrent: {

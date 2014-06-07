@@ -1,6 +1,6 @@
 {
   "name": "colorvert-api",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Color conversion JSON API",
   "main": "server.js",
   "repository": {
@@ -23,10 +23,10 @@
   "homepage": "https://github.com/jpederson/node-colorvert-api",
   "dependencies": {
     "express": "~4.4.0",
-    "colorvert": "~0.1.1"
+    "colorvert": "~0.1.2"
   },
   "devDependencies": {
-    "grunt": "latest",
+    "grunt": "*",
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
@@ -34,6 +34,6 @@
     "grunt-concurrent": "*",
     "grunt-nodemon": "*",
     "matchdep": "*",
-    "grunt-bump": "0.0.14"
+    "grunt-bump": "*"
   }
 }
