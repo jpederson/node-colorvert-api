@@ -18,7 +18,7 @@ module.exports = function(grunt) {
             },
             css: {
                 files: 'public/css/src/*.scss',
-                tasks: ['sass'],
+                tasks: ['styles'],
                 options: {
                     livereload: true,
                 },
@@ -26,10 +26,9 @@ module.exports = function(grunt) {
         },
 
         // we use the Sass
-        sass: {
+        styles: {
             dist: {
                 options: {
-                    // nested, compact, compressed, expanded
                     style: 'compressed'
                 },
                 files: {
@@ -47,11 +46,29 @@ module.exports = function(grunt) {
                     ]
                 }
             }
+        },
+
+        // start the server and all that
+        nodemon: {
+            dev: {
+                script: 'server.js'
+            }
+        },
+
+        // concurrent blocking task management
+        concurrent: {
+            target: {
+                tasks: [ 'nodemon', 'watch' ],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
         }
-        
+
     });
 
+
     // register task
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['concurrent']);
 };
 

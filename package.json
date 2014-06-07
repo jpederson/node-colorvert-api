@@ -31,7 +31,8 @@
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
-    "grunt-bump": "*",
+    "grunt-concurrent": "*",
+    "grunt-nodemon": "*",
     "matchdep": "*"
   }
 }
