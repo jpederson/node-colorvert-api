@@ -10,24 +10,16 @@ If you only need conversions between ICC profiles (CMYK, Lab, XYZ, RGB) and don'
 
 ### Installation Requirements
 
-You must first install LittleCMS, an tiny open source library written mostly in C for converting colors using ICC profiles. This shell script will get you there.
+Colorvert uses a tiny command line utility called transicc. It's installed by the `install-deps.sh` script in the root of this repo. Roughly, the commands below will get everything installed.
 
-```shell
-git clone https://github.com/mm2/Little-CMS.git
-cd Little-CMS
-./configure 
-make 
-make check 
-sudo make install
+```bash
+git clone https://github.com/jpederson/node-colorvert-api.git
+cd node-colorvert-api
+npm install --production
+./install-deps.sh
 ```
 
-Once you've installed that dependency, you're ready to install colorvert-api and start serving your color API!
-
-```shell
-npm install colorvert-api --save
-```
-
-More documentation on running the server to come as it's finished being developed. 
+Once you've installed that dependency, you're ready to run `node server.js` from the same directory, or use a tool like [forever](https://github.com/nodejitsu/forever) to keep the server running in the background. It binds to port 3000 by default - you can change it at the bottom of ser
 
 *****
 
