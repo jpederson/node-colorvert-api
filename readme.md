@@ -41,7 +41,7 @@ Expects `[l]` to be between 0-100. There are no bounds on `[a]` or `[b]` so they
 
 Expects 0-100 for `[x]`, `[y]`, and `[z]`. Assumes a luminance level of D65. 
 
-#### `/rgb/[r]/[g]/[b]
+#### `/rgb/[r]/[g]/[b]`
 
 Expects 0-255 for `[r]`, `[g]`, and `[b]`. Example: `/rgb/0/172/136`
 
