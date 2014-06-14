@@ -53,7 +53,7 @@ Expects 0-360&deg; value for `[h]` (hue), and 0-100 values for both `[s]` and `[
 
 Expects 0-360&deg; value for `[h]` (hue), and 0-100 values for both `[s]` and `[v]` (sometimes also called HSB - 'B' being brightness).
 
-### `/hex/[hex]`
+#### `/hex/[hex]`
 
 Expects `[hex]` to be a valid hex color **without the '#'**. Example: `/hex/00ccff` or `/hex/AACCFF`.
 
