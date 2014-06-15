@@ -15,10 +15,25 @@ module.exports = function( req, res ){
 		v = parseFloat( url_parts[3] );
 	
 
-	if ( h && s && v ) {
+	// validate input.
+	if ( isNaN( h ) || isNaN( s ) || isNaN( v ) ) {
 
-		// convert to Lab using transicc
-		cvert.hsv_to_all( h, s, v, function( response ){
+		// send the response to the browser
+		res.send( "Invalid input" );
+		return;
+
+	}
+
+
+	// convert to Lab using transicc
+	cvert.hsv_to_all( h, s, v, function( err, response ){
+
+		if ( err ) {
+
+			// send error response
+			res.send( err );
+
+		} else {
 
 			// log the conversion
 			console.log( "Converted hsv( "+h+", "+s+", "+v+" )." );
@@ -26,14 +41,9 @@ module.exports = function( req, res ){
 			// send the response to the browser
 			res.send( response );
 
-		});
+		}
 
-	} else {
-
-		// send the response to the browser
-		res.send( "Invalid input" );
-
-	}
+	});
 
 };
 

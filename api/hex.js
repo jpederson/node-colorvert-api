@@ -12,25 +12,30 @@ module.exports = function( req, res ){
 		hex = url_parts[1];
 
 
-	if( hex ) {
+	if ( !hex.length ) {
+		// send the response to the browser
+		res.send( "Invalid Hex value specified." );
+	}
 
-		// convert to rgb using transicc
-		cvert.hex_to_all( hex, function( response ){
+	// convert to rgb using transicc
+	cvert.hex_to_all( hex, function( err, response ){
+
+		if ( err ) {
+
+			// respond with the error
+			res.send( err );
+
+		} else {
 
 			// log the conversion
-			console.log( "Converted hex: #"+hex+"." );
+			console.log( "Successful Conversion: hex( #"+hex+" )." );
 
 			// send the response to the browser
 			res.send( JSON.stringify( response, null, 4 ) );
 
-		});
+		}
 
-	} else {
-
-		// send the response to the browser
-		res.send( "Invalid input" );
-
-	}
+	});
 
 };
 

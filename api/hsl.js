@@ -15,10 +15,23 @@ module.exports = function( req, res ){
 		l = url_parts[3];
 	
 
-	if ( h && s && l ) {
+	if ( isNaN( h ) || isNaN( s ) || isNaN( l ) ) {
 
-		// convert to lab using transicc
-		cvert.hsl_to_all( h, s, l, function( response ){
+		// send the response to the browser
+		res.send( "Invalid input" );
+		return;
+
+	}
+
+	// convert to lab using transicc
+	cvert.hsl_to_all( h, s, l, function( err, response ){
+
+		if ( err ) {
+
+			// send the error response
+			res.send( err );
+
+		} else {
 
 			// log the conversion
 			console.log( "Converted hsl( "+h+", "+s+", "+l+" )." );
@@ -26,13 +39,9 @@ module.exports = function( req, res ){
 			// send the response to the browser
 			res.send( JSON.stringify( response, null, 4 ) );
 
-		});
+		}
 
-	} else {
+	});
 
-		// send the response to the browser
-		res.send( "Invalid input" );
-
-	}
 
 };

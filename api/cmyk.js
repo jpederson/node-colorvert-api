@@ -16,10 +16,27 @@ module.exports = function( req, res ){
 		k = url_parts[4];
 	
 
-	if( c && m && y && k ) {
+	// validate input
+	if ( isNaN( c ) || isNaN( m ) || isNaN( y ) || isNaN( k ) ) {
 
-		// convert to lab using transicc
-		cvert.cmyk_to_all( c, m, y, k, function( response ){
+		console.log( "Invalid Input: cmyk( "+c+", "+m+", "+y+", "+k+" )" );
+
+		// send the response to the browser
+		res.send( "Invalid input" );
+		return;
+
+	}
+
+
+	// convert to lab using transicc
+	cvert.cmyk_to_all( c, m, y, k, function( err, response ){
+
+		if ( err ) {
+				
+			// send error response
+			res.send( err );
+
+		} else {
 
 			// log the activity
 			console.log( "Successful Conversion: cmyk( "+c+", "+m+", "+y+", "+k+" )" );
@@ -27,16 +44,9 @@ module.exports = function( req, res ){
 			// send the response to the browser
 			res.send( JSON.stringify( response, null, 4 ) );
 
-		});
+		}
 
-	} else {
-
-		console.log( "Invalid Input: cmyk( "+c+", "+m+", "+y+", "+k+" )" );
-
-		// send the response to the browser
-		res.send( "Invalid input" );
-
-	}
+	});
 
 };
 

@@ -15,10 +15,24 @@ module.exports = function( req, res ){
 		b = parseFloat( url_parts[3] );
 	
 
-	if( l && a && b ) {
+	if ( isNaN( l ) && isNaN( a ) && isNaN( b ) ) {
 
-		// convert to rgb using transicc
-		cvert.lab_to_all( l, a, b, function( response ){
+		// send the response to the browser
+		res.send( "Invalid input" );
+		return;
+
+	}
+
+
+	// convert to rgb using transicc
+	cvert.lab_to_all( l, a, b, function( err, response ){
+
+		if ( err ) {
+
+			// send error response
+			res.send( err );
+
+		} else {
 
 			// log the conversion
 			console.log( "Converted lab( "+l+", "+a+", "+b+" )." );
@@ -26,14 +40,9 @@ module.exports = function( req, res ){
 			// send the response to the browser
 			res.send( JSON.stringify( response, null, 4 ) );
 
-		});
+		}
 
-	} else {
-
-		// send the response to the browser
-		res.send( "Invalid input" );
-
-	}
+	});
 
 };
 

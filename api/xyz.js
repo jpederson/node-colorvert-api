@@ -14,10 +14,26 @@ module.exports = function( req, res ){
 		y = url_parts[2],
 		z = url_parts[3];
 	
-	if( x && y && z ) {
 
-		// convert to lab using transicc
-		cvert.xyz_to_all( x, y, z, function( response ){
+	// validate input
+	if ( isNaN( x ) || isNaN( y ) || isNaN( z ) ) {
+
+		// send the response to the browser
+		res.send( "Invalid input" );
+		return;
+
+	}
+		
+
+	// convert to lab using transicc
+	cvert.xyz_to_all( x, y, z, function( err, response ){
+
+		if ( err ) {
+
+			// send error response
+			res.send( err );
+
+		} else {
 
 			// log the conversion
 			console.log( "Converted xyz( "+x+", "+y+", "+z+" )." );
@@ -25,14 +41,9 @@ module.exports = function( req, res ){
 			// send the response to the browser
 			res.send( JSON.stringify( response, null, 4 ) );
 
-		});
+		}
 
-	} else {
-
-		// send the response to the browser
-		res.send( "Invalid input" );
-
-	}
+	});
 
 };
 
