@@ -18,7 +18,7 @@ module.exports = function(grunt) {
             },
             css: {
                 files: 'public/css/src/*.scss',
-                tasks: ['styles'],
+                tasks: ['sass'],
                 options: {
                     livereload: true,
                 },
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         },
 
         // we use the Sass
-        styles: {
+        sass: {
             dist: {
                 options: {
                     style: 'compressed'
@@ -42,6 +42,7 @@ module.exports = function(grunt) {
             js: {
                 files: {
                     'public/js/main.js': [
+                        'public/js/lib/jquery.min.js',
                         'public/js/src/main.js'
                     ]
                 }
