@@ -18,6 +18,9 @@ module.exports = function( req, res ){
 	// validate input
 	if ( isNaN( x ) || isNaN( y ) || isNaN( z ) ) {
 
+		// log the error
+		console.log( "Invalid Input: xyz( "+x+", "+y+", "+z+" )" );
+
 		// send the response to the browser
 		res.send( "Invalid input" );
 		return;

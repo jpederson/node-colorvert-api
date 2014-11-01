@@ -18,6 +18,9 @@ module.exports = function( req, res ){
 	// validate input.
 	if ( isNaN( h ) || isNaN( s ) || isNaN( v ) ) {
 
+		// log the error
+		console.log( "Invalid Input: hsv( "+h+", "+s+", "+v+" )" );
+
 		// send the response to the browser
 		res.send( "Invalid input" );
 		return;

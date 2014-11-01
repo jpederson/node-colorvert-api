@@ -12,9 +12,15 @@ module.exports = function( req, res ){
 		hex = url_parts[1];
 
 
+	// validate input
 	if ( !hex.length ) {
+
+		// log the error
+		console.log( "Invalid Input: hex( "+hex+" )" );
+
 		// send the response to the browser
 		res.send( "Invalid Hex value specified." );
+
 	}
 
 	// convert to rgb using transicc

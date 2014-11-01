@@ -15,7 +15,11 @@ module.exports = function( req, res ){
 		b = parseFloat( url_parts[3] );
 	
 
+	// validate input
 	if ( isNaN( l ) && isNaN( a ) && isNaN( b ) ) {
+
+		// log the error
+		console.log( "Invalid Input: lab( "+l+", "+a+", "+b+" )" );
 
 		// send the response to the browser
 		res.send( "Invalid input" );

@@ -19,6 +19,7 @@ module.exports = function( req, res ){
 	// validate input
 	if ( isNaN( c ) || isNaN( m ) || isNaN( y ) || isNaN( k ) ) {
 
+		// log the error
 		console.log( "Invalid Input: cmyk( "+c+", "+m+", "+y+", "+k+" )" );
 
 		// send the response to the browser
@@ -26,7 +27,6 @@ module.exports = function( req, res ){
 		return;
 
 	}
-
 
 	// convert to lab using transicc
 	cvert.cmyk_to_all( c, m, y, k, function( err, response ){

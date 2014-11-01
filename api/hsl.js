@@ -15,7 +15,11 @@ module.exports = function( req, res ){
 		l = url_parts[3];
 	
 
+	// validate input
 	if ( isNaN( h ) || isNaN( s ) || isNaN( l ) ) {
+
+		// log the error
+		console.log( "Invalid Input: hsl( "+h+", "+s+", "+l+" )" );
 
 		// send the response to the browser
 		res.send( "Invalid input" );
