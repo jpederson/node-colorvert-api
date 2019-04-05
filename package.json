@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/jpederson/node-colorvert-api",
   "dependencies": {
-    "express": "~4.4.0",
-    "colorvert": "~0.2.0"
+    "express": ">=4.5.0",
+    "colorvert": ">=0.2.0"
   },
   "devDependencies": {
     "grunt": "*",
