@@ -26,14 +26,14 @@
     "colorvert": ">=0.2.0"
   },
   "devDependencies": {
-    "grunt": "*",
-    "grunt-bump": "^0.8.0",
-    "grunt-concurrent": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-sass": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-nodemon": "^0.4.2",
-    "matchdep": "*"
+    "grunt": "^1.0.4",
+    "grunt-bump": "*",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-nodemon": "*",
+    "matchdep": "^2.0.0"
   }
 }
