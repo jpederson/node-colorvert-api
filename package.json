@@ -27,13 +27,13 @@
   },
   "devDependencies": {
     "grunt": "*",
+    "grunt-bump": "^0.8.0",
+    "grunt-concurrent": "*",
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
-    "grunt-concurrent": "*",
-    "grunt-nodemon": "*",
-    "matchdep": "*",
-    "grunt-bump": "*"
+    "grunt-nodemon": "^0.4.2",
+    "matchdep": "*"
   }
 }
