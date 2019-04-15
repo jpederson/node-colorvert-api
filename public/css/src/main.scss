@@ -33,6 +33,11 @@ p, ul, ol {
 	padding: 10px 0;
 }
 
+pre a {
+	color: rgba( black, .7 ) !important;
+	border-bottom: 1px dotted rgba( black, .7 ) !important;
+}
+
 strong, th {
 	font-weight: 700;
 }

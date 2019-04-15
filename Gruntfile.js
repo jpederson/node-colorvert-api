@@ -49,13 +49,6 @@ module.exports = function(grunt) {
             }
         },
 
-        // start the server and all that
-        nodemon: {
-            dev: {
-                script: 'server.js'
-            }
-        },
-        
         // bump package.json for publishing
         bump: {
             options: {
@@ -66,7 +59,7 @@ module.exports = function(grunt) {
         // concurrent blocking task management
         concurrent: {
             target: {
-                tasks: [ 'nodemon', 'watch' ],
+                tasks: [ 'watch' ],
                 options: {
                     logConcurrentOutput: true
                 }

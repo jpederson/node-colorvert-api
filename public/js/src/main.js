@@ -59,8 +59,10 @@ $(function(){
 
 		$.getJSON( endpoint, function( response ){
 
+			var url = window.location + endpoint.substring( 1 );
+
 			// set it into the response div
-			$(".response").html( "<pre>" + JSON.stringify( response, null, 3 ) + "</pre>" );
+			$(".response").html( "<pre><strong>URL:</strong><br><a href='" + url + "' target='_blank'>" + url + "</a><br><br><strong>Response:</strong><br>" + JSON.stringify( response, null, 3 ) + "</pre>" );
 
 			// set colors on body text and background.
 			$("body").css( "background-color", response.hex ).css( "color", response.hex_readable );
