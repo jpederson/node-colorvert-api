@@ -26,6 +26,7 @@
     "colorvert": ">=0.2.0"
   },
   "devDependencies": {
+    "clipboard": "^2.0.4",
     "grunt": "*",
     "grunt-bump": "*",
     "grunt-concurrent": "*",
