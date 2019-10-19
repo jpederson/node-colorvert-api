@@ -7,6 +7,8 @@
 
 @import "grid";
 
+@import "magnific";
+
 
 body {
 	font-family: "Open Sans", "Century Gothic", sans-serif;
@@ -56,6 +58,13 @@ h3 {
 	font-size: 1.2em;
 	line-height: 1.2em;
 	padding: 15px 0 3px;
+}
+
+hr {
+	height: 0;
+	border: 0;
+	border-bottom: 1px solid white;
+	margin: 20px 0;
 }
 
 	
@@ -121,9 +130,10 @@ header {
 }
 
 
-.more {
+.more-info {
 	max-width: 600px;
 	display: none;
+
 }
 
 
@@ -202,6 +212,17 @@ header {
 }
 
 
+.credit {
+	@include respond-to( 768px ) {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		font-size: .75em;
+		padding: 4px;
+	}
+}
+
+
 .fork-me {
 	position: absolute;
 	top: 0;
@@ -215,3 +236,4 @@ header {
 	opacity: .7;
 	font-size: .9em;
 }
+

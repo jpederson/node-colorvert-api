@@ -43,6 +43,8 @@ module.exports = function(grunt) {
                 files: {
                     'public/js/main.js': [
                         'public/js/lib/jquery.min.js',
+                        'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+                        'node_modules/clipboard/dist/clipboard.js',
                         'public/js/src/main.js'
                     ]
                 }

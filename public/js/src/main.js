@@ -80,6 +80,20 @@ $(function(){
 			// set colors on body text and background.
 			$("body").css( "background-color", response.hex ).css( "color", response.hex_readable );
 			$("a").css( "color", response.hex_readable ).css( "border-color", response.hex_readable );
+
+			$('.results .hex').html( response.hex );
+		
+			$('.results .lab').html( JSON.stringify( response.lab ) );
+		
+			$('.results .hsl').html( JSON.stringify( response.hsl ) );
+		
+			$('.results .xyz').html( JSON.stringify( response.xyz ) );
+		
+			$('.results .cmyk').html( JSON.stringify( response.cmyk ) );
+		
+			$('.results .hsv').html( JSON.stringify( response.hsv ) );
+		
+			$('.results .rgb').html( 'rgb( ' + response.rgb.r + ', ' + response.rgb.g + ', ' + response.rgb.b + ')' );
 		
 		});
 
@@ -118,6 +132,12 @@ $(function(){
 
 	// include the clipboard library so we can copy converted values to the clipboard and use them elsewhere.
 	new ClipboardJS('.clipboard');
+
+
+	// use the magnific popup
+	$( '.lightbox-ajax' ).magnificPopup({
+		type: 'inline'
+	});
 
 });
 
