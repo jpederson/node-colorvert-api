@@ -2,7 +2,7 @@
 
 An easy-to-use color conversion API written in node and using Express. 
 
-It uses the [colorvert](https://github.com/jpederson/node-colorvert) to perform color conversions. If you need the color conversion modules only, that's where you should look.
+It uses the [colorvert](https://github.com/jpederson/node-colorvert) node module to perform color conversions. If you need the color conversion modules only, that's where you should look.
 
 If you only need conversions between ICC profiles (CMYK, Lab, XYZ, RGB) and don't need the math-based conversions, you should take a look at the [`transicc`](https://github.com/jpederson/node-transicc) node module, which colorvert uses to perform those.
 
